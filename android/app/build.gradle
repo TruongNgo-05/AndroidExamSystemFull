@@ -1,0 +1,11 @@
+plugins { id 'com.android.application' }
+android {
+ namespace 'vn.jler.quizhubt'
+ compileSdk 35
+ defaultConfig { applicationId 'vn.jler.quizhubt'; minSdk 26; targetSdk 35; versionCode 5; versionName '3.0.0' }
+ buildTypes {
+  debug { manifestPlaceholders = [allowCleartext:'true'] }
+  release { manifestPlaceholders = [allowCleartext:'false']; minifyEnabled false }
+ }
+ compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+}

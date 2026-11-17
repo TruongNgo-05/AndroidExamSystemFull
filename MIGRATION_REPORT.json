@@ -1,0 +1,121 @@
+{
+  "source": [
+    "jler_profile_upload_fullstack - Copy.zip",
+    "Quiz-HUBT - Copy.zip"
+  ],
+  "database": "jlerTestingHubt",
+  "seedExams": 39,
+  "seedQuestions": 8632,
+  "existingDataOverwritten": false,
+  "referencedImageFiles": 156,
+  "includedQuestionImages": 107,
+  "filenameAliases": [
+    {
+      "databasePath": "image/CNTT/csdlhdt/hinh_01.png",
+      "sourceFile": "image/CNTT/csdlhdt/hinh-01.png"
+    },
+    {
+      "databasePath": "image/CNTT/csdlhdt/hinh_02.png",
+      "sourceFile": "image/CNTT/csdlhdt/hinh-02.png"
+    },
+    {
+      "databasePath": "image/CNTT/csdlhdt/hinh_03.png",
+      "sourceFile": "image/CNTT/csdlhdt/hinh-03.png"
+    },
+    {
+      "databasePath": "image/CNTT/csdlhdt/hinh_04.png",
+      "sourceFile": "image/CNTT/csdlhdt/hinh-04.png"
+    },
+    {
+      "databasePath": "image/CNTT/csdlhdt/hinh_05.png",
+      "sourceFile": "image/CNTT/csdlhdt/hinh-05.png"
+    },
+    {
+      "databasePath": "image/CNTT/csdlhdt/hinh_06.png",
+      "sourceFile": "image/CNTT/csdlhdt/hinh-06.png"
+    },
+    {
+      "databasePath": "image/CNTT/csdlhdt/hinh_07.png",
+      "sourceFile": "image/CNTT/csdlhdt/hinh-07.png"
+    },
+    {
+      "databasePath": "image/CNTT/csdlhdt/hinh_08.png",
+      "sourceFile": "image/CNTT/csdlhdt/hinh-08.png"
+    },
+    {
+      "databasePath": "image/CNTT/csdlhdt/hinh_09.png",
+      "sourceFile": "image/CNTT/csdlhdt/hinh-09.png"
+    },
+    {
+      "databasePath": "image/CNTT/csdlhdt/hinh_10.png",
+      "sourceFile": "image/CNTT/csdlhdt/hinh-10.png"
+    },
+    {
+      "databasePath": "image/CNTT/csdlhdt/hinh_11.png",
+      "sourceFile": "image/CNTT/csdlhdt/hinh-11.png"
+    },
+    {
+      "databasePath": "image/CNTT/csdlhdt/hinh_12.png",
+      "sourceFile": "image/CNTT/csdlhdt/hinh-12.png"
+    },
+    {
+      "databasePath": "image/CNTT/csdlhdt/hinh_13.png",
+      "sourceFile": "image/CNTT/csdlhdt/hinh-13.png"
+    },
+    {
+      "databasePath": "image/CNTT/csdlhdt/hinh_14.png",
+      "sourceFile": "image/CNTT/csdlhdt/hinh-14.png"
+    }
+  ],
+  "missingImages": [
+    "image/CNTT/csdlhdt/hinh_15.png",
+    "image/CNTT/csdlhdt/hinh_16.png",
+    "image/CNTT/csdlhdt/hinh_17.png",
+    "image/CNTT/csdlhdt/hinh_18.png",
+    "image/CNTT/csdlhdt/hinh_19.png",
+    "image/CNTT/csdlhdt/hinh_20.png",
+    "image/thuc_te_ao/hinh-01.png",
+    "image/thuc_te_ao/hinh-02.png",
+    "image/thuc_te_ao/hinh-03.png",
+    "image/thuc_te_ao/hinh-04.png",
+    "image/thuc_te_ao/hinh-05.png",
+    "image/thuc_te_ao/hinh-06.png",
+    "image/thuc_te_ao/hinh-07.png",
+    "image/thuc_te_ao/hinh-08.png",
+    "image/thuc_te_ao/hinh-09.png",
+    "image/thuc_te_ao/hinh-10.png",
+    "image/thuc_te_ao/hinh-11.png",
+    "image/thuc_te_ao/hinh-12.png",
+    "image/thuc_te_ao/hinh-13.png",
+    "image/thuc_te_ao/hinh-14.png",
+    "image/thuc_te_ao/hinh-15.png",
+    "image/thuc_te_ao/hinh-16.png",
+    "image/thuc_te_ao/hinh-17.png",
+    "image/thuc_te_ao/hinh-18.png",
+    "image/thuc_te_ao/hinh-19.png",
+    "image/thuc_te_ao/hinh-20.png",
+    "image/thuc_te_ao/hinh-21.png",
+    "image/thuc_te_ao/hinh-22.png",
+    "image/thuc_te_ao/hinh-23.png",
+    "image/ttnt/hinh-01.png",
+    "image/ttnt/hinh-02.png",
+    "image/ttnt/hinh-03.png",
+    "image/ttnt/hinh-04.png",
+    "image/ttnt/hinh-05.png",
+    "image/ttnt/hinh-06.png",
+    "image/ttnt/hinh-07.png",
+    "image/ttnt/hinh-08.png",
+    "image/ttnt/hinh-09.png",
+    "image/ttnt/hinh-10.png",
+    "image/ttnt/hinh-11.png",
+    "image/ttnt/hinh-12.png",
+    "image/ttnt/hinh-13.png",
+    "image/ttnt/hinh-14.png",
+    "image/ttnt/hinh-15.png",
+    "image/ttnt/hinh-16.png",
+    "image/ttnt/hinh-17.png",
+    "image/ttnt/hinh-18.png",
+    "image/ttnt/hinh-19.png",
+    "image/ttnt/hinh-20.png"
+  ]
+}

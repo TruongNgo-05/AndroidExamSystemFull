@@ -1,0 +1,22 @@
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+backend/application-local.yml
+
+# Generated files and dependencies
+android/.gradle/
+android/**/build/
+backend/target/
+frontend/node_modules/
+frontend/dist/
+
+# Machine-specific files
+android/local.properties
+.idea/
+.vscode/
+*.iml
+
+# Runtime uploads and logs
+backend/uploads/
+*.log

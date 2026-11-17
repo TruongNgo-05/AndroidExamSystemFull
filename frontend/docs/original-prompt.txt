@@ -1,0 +1,150 @@
+
+
+Hãy đọc toàn bộ file PDF hoặc Word (.docx) tôi đính kèm và chuyển các câu hỏi trắc nghiệm thành dữ liệu JavaScript cho website ôn tập và thi.
+
+THÔNG TIN MÔN HỌC
+
+- Tên môn: [ĐIỀN TÊN MÔN]
+- Tên biến: [VÍ DỤ: QUIZ_SETS_MNM]
+- ID đề: [VÍ DỤ: ma_nguon_mo]
+- Mã thư mục ảnh: [VÍ DỤ: mnm]
+- Mã ngành (majorId): [ĐIỀN MÃ NGÀNH HOẶC ĐỂ RỖNG NẾU LÀ MÔN CHUNG]
+
+Nếu chưa cung cấp tên môn, tên biến, ID đề hoặc mã thư mục ảnh, hãy tự đặt theo nội dung tài liệu. Tên biến phải đúng cú pháp JavaScript; ID và mã thư mục dùng ký tự không dấu, không có khoảng trắng.
+
+QUY TẮC NGÀNH
+
+- Môn thuộc ngành cụ thể phải có majorId tương ứng.
+- Môn dùng chung cho mọi ngành: majorId: "".
+- Không tự mặc định ngành là CNTT.
+- Nếu tôi chưa cung cấp ngành hoặc chưa nói môn dùng chung, hãy hỏi tôi trước khi xuất file cuối cùng.
+
+Các mã ngành hiện có:
+- cntt: Công nghệ thông tin
+- quan_tri_kinh_doanh: Quản trị kinh doanh
+- ke_toan: Kế toán
+- tai_chinh_ngan_hang: Tài chính - Ngân hàng
+- luat: Luật
+- ngon_ngu: Ngôn ngữ
+- du_lich: Du lịch
+- suc_khoe: Khối ngành sức khỏe
+
+CẤU TRÚC ĐẦU RA
+
+const QUIZ_SETS_TEN = [
+  {
+    id: "ten_de_thi",
+    majorId: "cntt",
+    title: "Tên môn học",
+    description: "Mô tả ngắn nội dung ôn tập",
+    questions: [
+      {
+        q: "Nội dung câu hỏi có ảnh",
+        image: "image/ma_mon/hinh-01.png",
+        imageAlt: "Mô tả ngắn hình minh họa",
+        o: ["Đáp án A", "Đáp án B", "Đáp án C", "Đáp án D"],
+        a: 0,
+      },
+      {
+        q: "Nội dung câu hỏi không có ảnh",
+        o: ["Đáp án A", "Đáp án B", "Đáp án C", "Đáp án D"],
+        a: 2,
+      },
+    ],
+  },
+];
+
+Thay toàn bộ thông tin và câu hỏi mẫu bằng dữ liệu thực tế. majorId đặt ở cấp đề, cùng cấp với id và title, không đặt trong từng câu hỏi.
+
+YÊU CẦU TRÍCH XUẤT
+
+1. Đọc toàn bộ tài liệu, bao gồm bảng, hình ảnh và bảng đáp án. Với tài liệu scan, nhận dạng chữ và đối chiếu hình trang khi cần.
+
+2. Giữ thứ tự câu hỏi. Không bỏ sót hoặc dùng dấu ... thay nội dung. Câu đánh số trùng vẫn giữ riêng theo thứ tự xuất hiện.
+
+3. Giữ nội dung, công thức và đoạn mã. Sửa lỗi mã hóa tiếng Việt nhưng không tự thay đổi ý nghĩa.
+
+4. Mỗi câu phải có đúng 4 lựa chọn trong o. Giữ thứ tự A, B, C, D nếu tài liệu có đúng 4 lựa chọn.
+
+5. a là vị trí đáp án đúng:
+   A = 0
+   B = 1
+   C = 2
+   D = 3
+
+6. Chỉ xác định đáp án từ bảng đáp án hoặc dấu đánh dấu có quy ước rõ ràng trong tài liệu. Không tự coi chữ in đậm, màu đỏ, tô nền hoặc gạch chân là đáp án nếu chưa xác định được quy ước.
+
+7. Không tự đoán đáp án, không đặt a: 0 để điền tạm. Nếu thiếu đáp án, đánh dấu không rõ, có mâu thuẫn hoặc nhiều đáp án đúng riêng biệt, ghi vào can_kiem_tra.txt.
+
+8. Nếu có hơn 4 lựa chọn, chỉ rút gọn khi giữ được ý nghĩa câu hỏi, đáp án đúng và 3 phương án nhiễu. Giữ thứ tự tương đối rồi tính lại a. Nếu không thể rút gọn mà giữ nguyên ý nghĩa, ghi vào can_kiem_tra.txt.
+
+9. Khi rút gọn, thay các tham chiếu như “Đáp án (3) và (4)” hoặc “Tất cả các đáp án” bằng nội dung đầy đủ cần thiết, tránh tham chiếu đến lựa chọn đã bỏ.
+
+10. Nếu dưới 4 lựa chọn, không tự thêm. Ghi rõ câu cần bổ sung vào can_kiem_tra.txt.
+
+11. Chỉ dùng các trường cấp đề:
+    id, majorId, title, description, questions.
+
+12. Mỗi câu chỉ dùng:
+    q, o, a và hai trường tùy chọn image, imageAlt.
+
+XỬ LÝ ẢNH
+
+13. Trích xuất đúng hình từ tài liệu, lưu vào image/<ma-mon>/. Giữ rõ chữ, ký hiệu và chú thích cần thiết. Không lấy kèm đáp án hoặc nội dung câu khác.
+
+14. Với hình vector, sơ đồ hoặc hình ghép từ nhiều thành phần, render/cắt vùng hình thành PNG rõ nét. Không tự vẽ hoặc tạo hình thay thế.
+
+15. Thêm vào câu có ảnh:
+    image: "image/<ma-mon>/hinh-01.png"
+    imageAlt: "Mô tả ngắn, không tiết lộ đáp án"
+
+16. Đường dẫn tính từ index.html. Dùng dấu /, tên file không dấu và khớp chính xác chữ hoa/thường.
+
+17. Hình dùng chung cho nhiều câu chỉ lưu một lần. Nếu một câu cần nhiều hình, ghép các hình liên quan thành một ảnh, giữ thứ tự và nhãn.
+
+18. Câu không có ảnh thì bỏ image và imageAlt. Không nhúng HTML vào q.
+
+19. Nếu tôi cung cấp URL HTTPS của ảnh, có thể dùng trực tiếp. Không tự tìm ảnh trên mạng thay hình trong tài liệu.
+
+20. Nếu thiếu hình hoặc hình không đọc được khiến câu không thể trả lời, ghi câu vào can_kiem_tra.txt; không đưa câu đó vào bộ đề chấm điểm và không tạo đường dẫn ảnh giả.
+
+KIỂM TRA
+
+21. Kiểm tra cú pháp JavaScript; escape đúng dấu nháy, dấu gạch chéo ngược và xuống dòng trong chuỗi.
+
+22. Dữ liệu chỉ dùng chuỗi, số, mảng và object; không dùng hàm, biểu thức hoặc biến tham chiếu trong câu hỏi.
+
+23. Kiểm tra mỗi câu có đúng 4 lựa chọn không rỗng và a là số nguyên từ 0 đến 3. Đối chiếu đáp án sau khi rút gọn.
+
+24. Kiểm tra đường dẫn ảnh nội bộ đều có file tương ứng và ảnh đúng câu hỏi.
+
+25. Đối chiếu tổng số câu:
+    Tổng câu trong tài liệu = Số câu đã xuất + Số câu còn vướng mắc.
+    Không tự xóa câu trùng nội dung.
+
+XUẤT FILE
+
+26. Tạo file quiz_sets_<ma-mon>.txt chứa nguyên đoạn:
+    const TEN_BIEN = [...];
+
+    File chỉ chứa mã JavaScript, không có hàng rào Markdown hoặc lời giải thích. Tôi sẽ chép nội dung vào file JavaScript của môn.
+
+27. Nếu có câu chưa xử lý, tạo can_kiem_tra.txt ghi:
+    - Thứ tự câu trong tài liệu.
+    - Số câu được in trong tài liệu, nếu có.
+    - Trang và lý do chưa xử lý.
+    Với Word, nếu chưa xác định được trang ổn định, ghi tiêu đề mục, vị trí đoạn/bảng và phần đầu câu hỏi; không tự bịa số trang.
+
+28. Nếu có ảnh, tạo thêm ZIP gồm file TXT, thư mục image/<ma-mon>/ và can_kiem_tra.txt nếu có. Nếu không có ảnh, chỉ cần các file TXT, không cần ZIP.
+
+29. Khi trả kết quả, gửi:
+    - Liên kết tải file TXT.
+    - Liên kết ZIP nếu có ảnh.
+    - Liên kết can_kiem_tra.txt nếu có vướng mắc.
+    - Tên môn và majorId đã dùng.
+    - Tổng số câu trong tài liệu.
+    - Số câu đã xuất.
+    - Số câu đã xuất có ảnh.
+    - Số câu còn vướng mắc.
+
+Không chỉ gửi mã trong tin nhắn; hãy tạo file TXT có thể tải xuống. Không tuyên bố đã xuất đầy đủ nếu vẫn còn câu chưa xử lý. Loại bỏ câu trùng lặp 

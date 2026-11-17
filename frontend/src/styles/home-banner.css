@@ -1,0 +1,48 @@
+/* Home banner uses shared theme colors and the existing Jeli asset. */
+.home-full-banner {
+ position:relative; isolation:isolate; overflow:hidden; background:radial-gradient(ellipse at 82% 45%,#21ac9a23,transparent 54%),linear-gradient(125deg,var(--bg),var(--panel));
+ color:var(--text); margin-bottom:0; border-bottom:1px solid var(--line);
+}
+.home-full-banner::before { content:""; position:absolute; inset:0; z-index:-1; pointer-events:none; background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px); background-size:64px 64px; opacity:.15; mask-image:linear-gradient(90deg,transparent,black); }
+.banner-inner { grid-template-columns:1.25fr 1fr; gap:64px; padding:70px 28px 64px; }
+.home-hero-badge { display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border:1px solid #19b2a348; background:#19b2a312; color:var(--hero-accent,#74e1d0); border-radius:8px; font-size:12px; font-weight:700; letter-spacing:.7px; }
+.home-full-banner { --hero-accent:#74e1d0; }
+:root[data-theme="light"] .home-full-banner { --hero-accent:#087f80; background:radial-gradient(ellipse at 82% 45%,#60d7bd32,transparent 56%),linear-gradient(125deg,#f7fbfc,#eaf7f4); }
+.home-full-banner h1 { font-size:clamp(38px,4vw,56px); line-height:1.1; letter-spacing:-2px; margin:22px 0; }
+.home-full-banner em { color:var(--hero-accent); }
+.home-full-banner p { color:var(--muted); max-width:48ch; font-size:17px; margin-bottom:26px; }
+.home-full-banner .campus-button { background:var(--panel); border:1px solid var(--line); color:var(--text); padding:14px 22px; display:inline-flex; justify-content:center; align-items:center; }
+.home-full-banner .campus-button.primary { background:var(--hero-accent); border-color:var(--hero-accent); color:#073b3c; box-shadow:0 8px 24px #087f8020; }
+:root[data-theme="light"] .home-full-banner .campus-button.primary { color:#fff; }
+.hero-library-stats { display:flex; gap:30px; margin:32px 0 0; }
+.hero-library-stats > div { display:flex; flex-direction:column; gap:4px; }
+.hero-library-stats b { color:var(--text); font-size:25px; }
+.hero-library-stats span { color:var(--muted); font-size:12px; }
+.home-full-banner .campus-jeli { position:relative; display:flex; flex-direction:column; align-items:center; order:0; min-width:0; width:100%; max-width:390px; gap:12px; }
+.hero-jeli-orbit { position:absolute; z-index:-1; top:15%; width:320px; height:320px; border:1px solid #18b6a44d; border-radius:50%; box-shadow:0 0 0 25px #16a68e09,0 0 0 55px #16a68e06; background:radial-gradient(circle,#42d4b719,transparent 72%); }
+.home-full-banner .campus-jeli img { width:300px; max-width:100%; height:280px; order:0; object-fit:contain; filter:drop-shadow(0 20px 26px #002a351f); }
+.home-full-banner .jeli-speech { padding:12px 18px; color:var(--text); background:var(--panel); border:1px solid var(--line); border-radius:16px; font-size:13px; line-height:1.65; width:100%; max-width:330px; box-shadow:var(--shadow); }
+.home-full-banner .jeli-accessory { position:absolute; top:120px; right:15px; left:auto; bottom:auto; font-size:35px; }
+.hero-jeli-level { width:min(100%,330px); padding:16px 20px; background:var(--panel); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); }
+.hero-jeli-level > div { display:flex; justify-content:space-between; gap:12px; align-items:center; }
+.hero-jeli-level .jeli-stage { font-size:13px; color:var(--text); }
+.hero-jeli-level b { font-size:12px; color:var(--hero-accent); background:#19b2a313; padding:5px 9px; border-radius:8px; }
+.hero-jeli-level progress { width:100%; height:7px; margin:12px 0 8px; accent-color:var(--hero-accent); }
+.hero-jeli-level small { color:var(--muted); font-size:12px; }
+.home-daily-progress { margin:24px 0 34px; padding:14px 20px; border:1px solid var(--line); border-radius:16px; background:var(--panel); }
+.home-daily-progress .campus-progress { margin:0; }
+@media(max-width:900px) { .banner-inner { gap:30px; padding:46px 24px; } .hero-library-stats { gap:20px; } }
+@media(max-width:650px) {
+ .banner-inner { grid-template-columns:1fr; padding:34px 20px 30px; gap:32px; }
+ .home-full-banner h1 { font-size:42px; letter-spacing:-1.5px; }
+ .home-full-banner p { font-size:15px; }
+ .home-full-banner .campus-hero-actions { flex-direction:column; }
+ .hero-library-stats { justify-content:space-between; gap:12px; margin-top:24px; }
+ .hero-library-stats b { font-size:23px; }
+ .home-full-banner .campus-jeli { max-width:330px; }
+ .home-full-banner .campus-jeli img { width:240px; height:220px; }
+ .hero-jeli-orbit { width:250px; height:250px; top:20%; }
+ .home-full-banner .jeli-accessory { top:110px; right:10px; }
+ .home-daily-progress { padding:14px; }
+}
+@media(max-width:360px) { .home-full-banner h1 { font-size:36px; } .home-hero-badge { font-size:10px; letter-spacing:.2px; } .hero-library-stats span { font-size:11px; } }

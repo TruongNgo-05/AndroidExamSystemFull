@@ -1,0 +1,83 @@
+.progress-transfer {
+  margin: 24px 0;
+  padding: 26px;
+  border-radius: 22px;
+}
+.progress-transfer p {
+  line-height: 1.7;
+}
+.progress-transfer small,
+.transfer-reader small {
+  display: block;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.transfer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0;
+}
+.progress-transfer-modal textarea {
+  font-family: ui-monospace, monospace;
+  overflow-wrap: anywhere;
+}
+.transfer-qr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin: 25px auto;
+  padding: 18px;
+  background: #fff;
+  width: fit-content;
+  color: #096e70;
+  border-radius: 18px;
+}
+.transfer-reader video {
+  display: block;
+  width: 100%;
+  max-height: 360px;
+  border-radius: 14px;
+  background: #111;
+  object-fit: cover;
+}
+.qr-received,
+.transfer-preview {
+  padding: 20px;
+  border-radius: 16px;
+  background: #0cb3a110;
+}
+.transfer-error {
+  color: #d83955;
+  overflow-wrap: anywhere;
+}
+.transfer-warning {
+  padding: 16px;
+  border-left: 3px solid #df9a39;
+  background: #df9a3915;
+  line-height: 1.7;
+}
+.progress-transfer-modal .ant-modal-body {
+  max-height: 75vh;
+  overflow: auto;
+}
+.qr-received p {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 600px) {
+  .progress-transfer {
+    padding: 20px;
+  }
+  .transfer-actions .ant-btn {
+    height: auto;
+    min-height: 42px;
+    white-space: normal;
+  }
+  .transfer-qr {
+    padding: 10px;
+  }
+  .transfer-preview {
+    padding: 16px;
+  }
+}

@@ -1,0 +1,21 @@
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: "YOUR_GMAIL_ADDRESS"
+    password: "YOUR_NEW_GMAIL_APP_PASSWORD"
+  datasource:
+    url: jdbc:mysql://localhost:3306/jlerTestingHubt?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: "YOUR_MYSQL_PASSWORD"
+app:
+  mail-enabled: false # Set true after configuring SMTP
+  mail-from: "YOUR_GMAIL_ADDRESS"
+  jwt-secret: "REPLACE_WITH_RANDOM_BASE64_SECRET"
+  cookie-secure: false
+  admin-email: admin@jler.local
+  admin-password: "YOUR_ADMIN_PASSWORD"
+  cors-origins: http://localhost:5173
+
+  seed: true
+  seed-overwrite: false

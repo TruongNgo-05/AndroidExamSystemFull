@@ -1,0 +1,46 @@
+{
+  "visualSource": "Quiz-HUBT - Copy.zip",
+  "apiIntegrationSource": "jler_profile_upload_fullstack - Copy.zip",
+  "styles": [
+    {
+      "file": "campus.css",
+      "identicalToOriginal": true
+    },
+    {
+      "file": "modern.css",
+      "identicalToOriginal": false
+    },
+    {
+      "file": "home-banner.css",
+      "identicalToOriginal": true
+    },
+    {
+      "file": "intro.css",
+      "identicalToOriginal": true
+    },
+    {
+      "file": "console.css",
+      "identicalToOriginal": true
+    },
+    {
+      "file": "app.css",
+      "identicalToOriginal": false
+    },
+    {
+      "file": "jeli.css",
+      "identicalToOriginal": true
+    },
+    {
+      "file": "transfer.css",
+      "identicalToOriginal": true
+    },
+    {
+      "file": "games.css",
+      "identicalToOriginal": true
+    },
+    {
+      "file": "routes.css",
+      "identicalToOriginal": true
+    }
+  ]
+}

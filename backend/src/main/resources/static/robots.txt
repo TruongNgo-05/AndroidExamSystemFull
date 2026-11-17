@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://he-thong-thi-three.vercel.app/sitemap.xml

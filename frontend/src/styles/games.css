@@ -1,0 +1,345 @@
+/* Shared responsive game UI. No hover interactions on touch devices. */
+.game-grid,
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 24px 0;
+}
+.game-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--panel);
+  color: var(--text);
+  text-decoration: none;
+  min-width: 0;
+}
+.game-card p {
+  margin: 0;
+  flex: 1;
+}
+.game-card h3 {
+  margin: 0;
+  font-size: 22px;
+}
+.game-card small {
+  color: var(--muted);
+}
+.game-card b {
+  color: #0ca8a3;
+}
+.game-emoji {
+  font-size: 42px;
+}
+.game-millionaire {
+  background: linear-gradient(135deg, var(--panel), #f2cf5b20);
+}
+.game-vietnamese {
+  background: linear-gradient(135deg, var(--panel), #a694e620);
+}
+.game-sprint {
+  background: linear-gradient(135deg, var(--panel), #e5938020);
+}
+.games-page {
+  max-width: 1100px;
+}
+.game-lobby,
+.game-result {
+  text-align: center;
+  max-width: 850px;
+  margin: auto;
+  padding: 26px;
+}
+.game-jeli {
+  width: 180px;
+  display: block;
+  margin: 15px auto;
+}
+.game-actions,
+.lifelines,
+.game-top,
+.game-scoreboard,
+.milestones {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.game-actions {
+  justify-content: center;
+  margin-top: 24px;
+}
+.game-top,
+.game-scoreboard {
+  justify-content: space-between;
+  margin: 20px 0;
+}
+.game-scoreboard strong {
+  font-size: 24px;
+  color: #0a9e98;
+}
+.game-scoreboard .timer-urgent {
+  color: #d84660;
+}
+.milestones {
+  justify-content: center;
+  margin: 15px 0;
+}
+.milestones span {
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: var(--soft);
+  color: var(--muted);
+}
+.milestones .achieved {
+  color: #087d77;
+  background: #12ada720;
+}
+.question-panel {
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--panel);
+}
+.question-panel h2 {
+  font-size: clamp(23px, 3vw, 34px);
+  line-height: 1.4;
+}
+.game-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 25px 0;
+}
+.game-options button {
+  min-height: 76px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  text-align: left;
+  padding: 17px;
+  border: 2px solid var(--line);
+  border-radius: 16px;
+  color: var(--text);
+  background: var(--soft);
+  font: inherit;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+.game-options b {
+  display: grid;
+  place-items: center;
+  flex: 0 0 32px;
+  height: 32px;
+  background: var(--panel);
+  border-radius: 10px;
+}
+.game-options button:disabled {
+  cursor: default;
+  opacity: 0.65;
+}
+.game-options button.correct {
+  border-color: #13ab93;
+  background: #13ab9320;
+  opacity: 1;
+}
+.game-options button.incorrect {
+  border-color: #e8596a;
+  background: #e8596a20;
+  opacity: 1;
+}
+.game-feedback,
+.game-hint {
+  padding: 20px;
+  border-radius: 14px;
+  background: var(--soft);
+  margin-top: 20px;
+}
+.audience-poll {
+  display: grid;
+  gap: 8px;
+  margin-top: 18px;
+}
+.audience-poll > div {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.audience-poll progress {
+  flex: 1;
+  accent-color: #0ca8a3;
+}
+.home-games {
+  margin-top: 50px;
+}
+.home-full-banner {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  background: linear-gradient(115deg, #063f44, #076e70 60%, #179d96);
+  color: white;
+  border-radius: 0;
+  margin-top: -58px;
+  margin-bottom: 42px;
+}
+.banner-inner {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  padding: 56px 28px;
+  align-items: center;
+}
+.home-full-banner h1 {
+  font-size: clamp(36px, 4.7vw, 66px);
+  letter-spacing: -2px;
+}
+.home-full-banner p,
+.home-full-banner small {
+  color: #d4eeee;
+}
+.home-full-banner .eyebrow,
+.home-full-banner em {
+  color: #85f1d3;
+  font-style: normal;
+}
+.home-full-banner .campus-button {
+  background: #ffffff12;
+  border-color: #ffffff60;
+  color: white;
+}
+.home-full-banner .campus-button.primary {
+  background: #a2f7d9;
+  color: #064344;
+}
+.home-full-banner .campus-progress {
+  color: white;
+}
+.home-full-banner .jeli-speech {
+  color: #104d50;
+  background: #fff;
+}
+.home-full-banner .campus-progress span {
+  background: #ffffff10;
+}
+.home-full-banner .campus-jeli {
+  max-width: 360px;
+  margin: auto;
+  width: 100%;
+}
+.game-card:focus-visible,
+.game-options button:focus-visible {
+  outline: 3px solid #15c9b5;
+  outline-offset: 4px;
+}
+@media (min-width: 901px) and (hover: hover) and (pointer: fine) {
+  .game-card:hover {
+    border-color: #0ca8a3;
+    transform: translateY(-3px);
+  }
+  .game-options button:not(:disabled):hover {
+    border-color: #0ca8a3;
+  }
+}
+@media (max-width: 900px) {
+  .game-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .banner-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+}
+@media (max-width: 600px) {
+  .game-grid,
+  .topic-grid,
+  .game-options {
+    grid-template-columns: 1fr;
+  }
+  .game-card {
+    padding: 22px;
+  }
+  .games-page .question-panel {
+    padding: 20px 15px;
+  }
+  .game-scoreboard {
+    gap: 10px;
+    font-size: 14px;
+  }
+  .game-scoreboard strong {
+    font-size: 21px;
+  }
+  .lifelines {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+  .game-lobby,
+  .game-result {
+    padding: 15px 0;
+  }
+  .game-top > span {
+    order: 3;
+    width: 100%;
+  }
+  .game-options button {
+    min-height: 68px;
+  }
+  .banner-inner {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+    gap: 25px;
+  }
+  .home-full-banner {
+    margin-top: -48px;
+  }
+  .home-full-banner .campus-jeli {
+    max-width: 250px;
+  }
+  .home-full-banner h1 {
+    letter-spacing: -1px;
+  }
+  .home-full-banner .campus-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .home-full-banner .campus-button {
+    text-align: center;
+  }
+  .home-full-banner .campus-progress {
+    justify-content: flex-start;
+  }
+  .milestones {
+    gap: 7px;
+  }
+  .milestones span {
+    padding: 7px 10px;
+  }
+  .campus-progress {
+    gap: 8px;
+  }
+  .home-full-banner .banner-inner small {
+    display: block;
+    line-height: 1.7;
+  }
+}
+@media (hover: none) {
+  .game-card:hover,
+  .game-options button:hover {
+    transform: none;
+  }
+}
+.home-full-banner .campus-progress .ant-btn:disabled,
+.about-inner .campus-progress .ant-btn:disabled {
+  background: #ffffff18;
+  color: #a0e7db;
+  border-color: #ffffff35;
+}
+/* Full-width banner must not create a scrollbar on browsers with classic scrollbars. */
+.app-shell {
+  overflow-x: clip;
+}

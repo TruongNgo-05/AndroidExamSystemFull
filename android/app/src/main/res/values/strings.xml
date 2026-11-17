@@ -1,0 +1,5 @@
+<resources>
+<string name="found_count">%1$d bộ đề phù hợp</string>
+<string name="shuffle_questions">Trộn thứ tự câu hỏi</string>
+<string name="correct_option">✓ %1$s</string>
+</resources>
